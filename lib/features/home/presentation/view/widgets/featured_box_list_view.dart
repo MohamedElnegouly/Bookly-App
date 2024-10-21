@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/widgets/Custom_error_Widget.dart';
 import 'package:bookly_app/core/widgets/Custom_loading_indecator.dart';
 import 'package:bookly_app/features/home/presentation/manager/Featured_books_cubit/featured_books_cubit.dart';
@@ -5,6 +6,7 @@ import 'package:bookly_app/features/home/presentation/view/widgets/featured_list
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBoxListView extends StatelessWidget {
   const FeaturedBoxListView({super.key});
@@ -26,10 +28,16 @@ class FeaturedBoxListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: CustomBookImage(
-                      imageUrl:
-                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                              '',
+                    child: GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.kBookDetailsView,
+                            extra: state.books[index]);
+                      },
+                      child: CustomBookImage(
+                        imageUrl: state.books[index].volumeInfo.imageLinks
+                                ?.thumbnail ??
+                            '',
+                      ),
                     ),
                   );
                 }),

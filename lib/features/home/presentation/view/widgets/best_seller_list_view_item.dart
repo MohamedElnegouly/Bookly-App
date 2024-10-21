@@ -64,7 +64,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         const Spacer(),
                         RatingSeller(
                           language: bookModel.volumeInfo.language ?? 'unknown',
-                          count: bookModel.volumeInfo.pageCount ?? 111,
+                          count: bookModel.volumeInfo.pageCount ?? 000,
                         ),
                       ],
                     ),
