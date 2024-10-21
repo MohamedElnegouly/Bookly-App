@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key,});
+  const BestSellerListView({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class BestSellerListView extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemCount: state.Books.length,
               itemBuilder: (context, index) {
-                return  Padding(
+                return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: BestSellerListViewItem(
                     bookModel: state.Books[index],

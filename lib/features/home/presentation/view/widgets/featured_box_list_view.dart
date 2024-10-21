@@ -19,7 +19,7 @@ class FeaturedBoxListView extends StatelessWidget {
             //the height of the item / the screen
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
-              //steach 
+                //steach
                 physics: const BouncingScrollPhysics(),
                 itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
@@ -28,7 +28,8 @@ class FeaturedBoxListView extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: CustomBookImage(
                       imageUrl:
-                          state.books[index].volumeInfo.imageLinks.thumbnail,
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                              '',
                     ),
                   );
                 }),
