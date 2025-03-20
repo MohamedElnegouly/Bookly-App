@@ -18,7 +18,6 @@ The Bookly App is a Flutter-based application designed for buying and selling bo
 
 ## Usage
 Start the application:
-bash
 
  - Open the app.
  - Browse the list of available books on the home screen.
